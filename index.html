@@ -39,19 +39,28 @@
               <a href="saldos.html" class="nav-link">Saldos</a>
               <a href="contato.html" class="nav-link">Contato</a>
             </div>
+
+             <!-- Busca -->
+        <form class="d-flex form-busca">
+          <div class="input-group">
+            <input type="search" class="form-control me-1" placeholder="Buscar" aria-label="Search">
+            <button type="submit" class="btn btn-outline-secondary">Buscar</button>
+          </div>
+        </form>
+        <div class="login"><img src="imagens/login.png" width="24px"></img></div>
           </div>
 
           <!-- Carrinho -->
-          <div class="align-self-end d-flex align-items-center ">
-            <ul class="navbar-nav">
+          <div class="carrinho">
+            <ul class="navbar-nav barra-carrinho">
               <li class="nav-item">
-                <a href="loja.html" class="nav-link">
-                  <img src="imagens/carrinho-de-compras.png" width="24px"></img>
-                </a>
+                <img src="imagens/carrinho-de-compras.png" width="24px"></img>
+                <!-- <span id="contador-carrinho">0</span>
+                <button class="btn btn-dark clear-cart">Limpar</button> -->
               </li>
             </ul>
+          </div>   
 
-          </div>
       </div>
     </nav>
     <!-- Carrossel fotos -->
@@ -180,24 +189,25 @@
             </ul>
           </div>
         </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Pagamento</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"></li>
-            <li class="mb-2"></li>
-            <li class="mb-2"></li>
-            <li class="mb-2"></li>
-            <li class="mb-2"></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
+        <div class="col-6 col-lg-3 mb-3 footer-clube">
           <h5>Entre para o clube sustentável :)</h5>
-          <form class="form" action="enviesuaarte.html">
+          <form class="form" action="index.html">
             <div class="mb-3">
               <label for="email">Receba promoções exclusivas e as últimas novidades da loja:</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="contato@email.com">
+              <button class="btn btn-light">Subscrever no clube!</button>
             </div>
           </form>
+        </div>
+        <div class="col-6 col-lg-2 mb-3 footer-pagamento">
+          <h5>Pagamento</h5>
+          <div class="mb-3">
+          <ul class="list-unstyled">
+            <li class="icon-pag"><img src="imagens/visa.svg" alt="Visa"></li>
+            <li class="icon-pag"icon32><img src="imagens/logo_master.svg" alt="Mastercard"></li>
+            <li class="icon-pag-b"><img src="imagens/mbway_white.png" alt="Mbway"></li>
+          </ul>
+        </div>
         </div>
       </div>
     </div>

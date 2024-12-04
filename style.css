@@ -1,3 +1,8 @@
+/*Área de login*/
+.login img{
+  margin-left: 330px;
+}
+
 /* Carrinho de compras */
 #contador-carrinho {
   position: absolute;
@@ -23,6 +28,12 @@
 .product-card {
   position: relative;
 }
+
+/*Posicionamento da busca*/
+.form-busca{
+  margin-left: 30px
+}
+
 
 .tag-saldo {
   background-color: #2db2ab;
@@ -50,6 +61,35 @@
   flex-wrap: wrap;
   gap: 25px;
   padding-top: 10px;
+}
+
+.footer-pagamento ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.footer-pagamento ul .icon-pag{
+  width: 32px;
+  height: auto;
+}
+
+.footer-pagamento ul .icon-pag-b img{
+  display: block;
+  width: 65px;
+  height: 32px;
+}
+
+/* .footer-clube {
+  position: relative;
+}
+*/
+
+.footer-clube button
+{
+  margin-top: 20px;
+  width: 100%;
 }
 
 #email {
