@@ -1,3 +1,28 @@
+h2 {
+  padding: 20px 0;
+}
+
+.font-1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-2 {
+  font-family: "League Spartan", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-3 {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
 /* Carrinho de compras */
 #contador-carrinho {
   position: absolute;
@@ -79,5 +104,5 @@
   margin-top: 15px;
 }
 .banner-home {
-  padding: 50px 0;
+  padding: 20px 0;
 }
