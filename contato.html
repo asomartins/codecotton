@@ -1,58 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeCotton</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="imagens/carrinho-de-compras.png">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Link Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeCotton | Contato</title>
+  <meta name="description" content="CodeCotton - Moda sustentável para toda a família. Conheça as novidades em roupas masculinas, femininas, infantis e promoções.">
+  <link rel="icon" type="image/png" sizes="16x16" href="imagens/carrinho-de-compras.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <!-- Link Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-<body style="min-width:372px">
-   <div id="body" class="bodysite">
 
-    <!-- Nav Bar -->
-    <nav class="navbar bg-dark border-bottom border-body navbar-expand-sm py-2 sticky-top" data-bs-theme="dark">
-      <div class="container">
-        <a href="" class="nav-bar-brand d-flex align-items-center"> 
-          <nav class="navbar navbar">
-            <a class="navbar-brand" href="#">
-              <img src="imagens/logotipo.png" width="80" height="60" alt="logo">
-            </a>
-          </nav>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar bg-dark border-bottom border-body navbar-expand-sm py-2 sticky-top" data-bs-theme="dark">
+    <div class="container">
+      <!-- Logotipo -->
+      <a class="navbar-brand logo" href="index.html">
+        <img src="imagens/logotipo.png" width="100" height="80" alt="logo" />
+      </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuNavbar">
-          <div class="navbar-nav mr-auto navbar-left">
-            <a href="index.html" class="nav-link">Início</a>
-            <a href="sobre.html" class="nav-link">Sobre</a>
-            <a href="loja_feminina.html" class="nav-link">Feminino</a>
-            <a href="loja_masculina.html" class="nav-link">Masculino</a>
-            <a href="loja_infantil.html" class="nav-link">Infantil</a>
-            <a href="saldos.html" class="nav-link">Saldos</a>
-            <a href="contato.html" class="nav-link active">Contato</a>
-          </div>
+      <!-- Menu hambúrguer -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu header -->
+      <div class="collapse navbar-collapse justify-content-between font-1" id="menuNavbar">
+        <!-- Links de navegação -->
+        <div class="navbar-nav">
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="sobre.html" class="nav-link">Sobre</a>
+          <a href="loja_feminina.html" class="nav-link">Feminino</a>
+          <a href="loja_masculina.html" class="nav-link">Masculino</a>
+          <a href="loja_infantil.html" class="nav-link">Infantil</a>
+          <a href="saldos.html" class="nav-link">Saldos</a>
+          <a href="contato.html" class="nav-link active">Contato</a>
         </div>
 
-         <!-- Carrinho -->
-         <div class="align-self-end d-flex align-items-center ">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="loja.html" class="nav-link"> 
-                <img src="imagens/carrinho-de-compras.png" width="24px"></img>
-              </a>
-            </li>
-          </ul>
-        </div>     
+        <!-- Formulário de busca -->
+        <form class="d-flex form-busca">
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" />
+            <button type="submit" class="btn btn-outline-secondary">
+              <img src="imagens/search.png" alt="Buscar" style="width: 20px; height: 20px;" />
+            </button>
+          </div>
+        </form>
+
+        <!-- Login e carrinho -->
+        <div class="d-flex align-items-center icons-section">
+          <!-- Login -->
+          <a href="login.html" class="nav-link">
+            <img src="imagens/login.png" width="24" alt="Login" class="icon" />
+          </a>
+
+          <!-- Carrinho -->
+          <a href="carrinho.html" class="nav-link">
+            <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
+          </a>
+        </div>
       </div>
-    </nav>
-  <!-- Carrossel fotos -->
-    <div class="container">
+    </div>
+  </nav>
+  <!-- Fim Nav Bar -->
+
+  <main>
+    <!-- Container conteúdo -->
+    <div class="conteudo">
+
+      <!-- Carrossel fotos -->
       <div class="carousel slide" data-bs-ride="carousel" id="ads">
         <div class="carousel-indicators">
           <button class="active" data-bs-target="ads" data-bs-slide-to="0"></button>
@@ -74,45 +98,109 @@
           <div class="carousel-item" data-bs-interval="3000">
             <img src="imagens/banner_saldos.png" alt="CodeCotton" class="img-fluid">
           </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
-      <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+      <!-- Fim - Carrossel fotos -->
+
+      <!-- Breadcrumbs -->
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html" class="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Contato</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- Fim - Breadcrumbs -->
+
+      <!-- Contato -->
+      <div class="container contato font-2">
+        <h2>Contato</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quidem earum inventore alias, porro sapiente eaque id voluptas harum laudantium mollitia quo commodi iste animi fugiat quaerat odio velit adipisci?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur error inventore dolorum laudantium, odio accusamus quo ea numquam libero quas nihil ipsum molestias. Adipisci sint consequatur, sit natus eaque veritatis!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam minima provident quibusdam inventore ab a atque ipsa temporibus dolorem. Deserunt quis reprehenderit ratione maiores magnam repudiandae itaque eaque facilis fugit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quidem earum inventore alias, porro sapiente eaque id voluptas harum laudantium mollitia quo commodi iste animi fugiat quaerat odio velit adipisci?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur error inventore dolorum laudantium, odio accusamus quo ea numquam libero quas nihil ipsum molestias. Adipisci sint consequatur, sit natus eaque veritatis!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam minima provident quibusdam inventore ab a atque ipsa temporibus dolorem. Deserunt quis reprehenderit ratione maiores magnam repudiandae itaque eaque facilis fugit.</p>
+      </div>
+      <!-- Fim - Contato -->
+
     </div>
+    <!-- Fim - Container Conteúdo -->
+  </main>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-  
-    
-
-       
-  
- <!-- Footer -->
-  <footer class="border-top fixed-bottom text-muted bg-dark text-light">
-    <div class="container">
-      <div class="row py-2">
-        <div class="col-12 col-md-4 text-light text-center">
-          Desenvolvido por Amanda Oliveira, Claudia Alfieri e João Costa
+  <!-- Footer -->
+  <footer class="border-top text-muted bg-dark text-light footer-container font-1" data-bs-theme="dark">
+    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+      <div class="row">
+        <div class="col-lg-1 mb-5 selos">
+          <a class="navbar-brand" href="index.html">
+            <img src="imagens/logotipo.png" width="80" height="60" alt="logo">
+          </a>
+          <img src="imagens/footer-eco-icon-white.png" width="80" height="80" alt="Sustainable Icon" class="mt-5">
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+          <h5>Informações</h5>
+          <nav class="navbar">
+            <div class="navbar-nav mr-auto navbar-left ">
+              <a href="sobre.html" class="nav-link">Sobre</a>
+              <a href="loja_feminina.html" class="nav-link">Feminino</a>
+              <a href="loja_masculina.html" class="nav-link">Masculino</a>
+              <a href="loja_infantil.html" class="nav-link">Infantil</a>
+              <a href="contato.html" class="nav-link">Contato</a>
+            </div>
+          </nav>
+        </div>
+        <div class="col-6 col-lg-2 mb-3 footer-redes">
+          <h5>Comunidade</h5>
+          <div class="mb-3">
+            <ul class="list-unstyled">
+              <li><a href="https://www.instagram.com/cesae.digital/" target="_blank">
+                  <img src="imagens/instagram.svg" alt="Instagram">
+                </a></li>
+              <li><a href="https://www.facebook.com/CesaeDigital" target="_blank">
+                  <img src="imagens/facebook.svg" alt="Facebook">
+                </a></li>
+              <li><a href="https://www.youtube.com/user/CESAECanal" target="_blank">
+                  <img src="imagens/youtube.svg" alt="youtube">
+                </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3 footer-clube">
+          <h5>Entre para o clube sustentável :)</h5>
+          <form class="form" action="index.html">
+            <div class="mb-3">
+              <label for="email">Receba promoções exclusivas e as últimas novidades da loja:</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="contato@email.com">
+              <button class="btn btn-light">Subscrever no clube!</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-6 col-lg-3 mb-3 footer-pagamento">
+          <h5>Pagamento</h5>
+          <div class="mb-3">
+            <ul class="list-unstyled">
+              <li class="icon-pag"><img src="imagens/visa.svg" alt="Visa"></li>
+              <li class="icon-pag"><img src="imagens/logo_master.svg" alt="Mastercard"></li>
+              <li class="icon-pag-b"><img src=" imagens/mbway_white.png" alt="Mbway"></li>
+              <li class="icon-pag-b"><img src="imagens/icon-multibanco.svg" alt="Multibanco"></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </footer>       
- 
+  </footer>
+  <!-- Fim - Footer -->
+
 </body>
+
 </html>

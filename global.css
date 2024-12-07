@@ -1,0 +1,46 @@
+h2 {
+  padding: 20px 0;
+}
+
+.font-1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-2 {
+  font-family: 'League Spartan', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-3 {
+  font-family: 'Quicksand', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.logo {
+  margin-right: 25px !important;
+}
+
+/* Busca */
+.form-busca {
+  margin: 0 15px;
+  max-width: 300px;
+  flex-grow: 1;
+}
+
+.form-busca button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.form-busca img {
+  width: 20px;
+  height: 20px;
+}
