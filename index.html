@@ -58,7 +58,7 @@
         <!-- Login e carrinho -->
         <div class="d-flex align-items-center icons-section">
           <!-- Login -->
-          <a href="login.html" class="nav-link">
+          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
             <img src="imagens/login.png" width="24" alt="Login" class="icon" />
           </a>
 
@@ -143,7 +143,7 @@
 
           <div class="col-md-5 col-lg-3">
             <div class="card text-center bg-light">
-              <a href="saldos.html"><img src="imagens/card-sale.png" alt="Foto saldos" class="card-img-top img-fluid"></a>
+              <a href="saldos.html"><img src="imagens/card_saldos.png" alt="Foto saldos" class="card-img-top img-fluid"></a>
               <div class="card-body bg-dark text-light">
                 <h5 class="card-text">Saldos</h5>
               </div>
@@ -233,6 +233,35 @@
     </div>
   </footer>
   <!-- Fim - Footer -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email-user" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="nome" class="form-control" id="nome-user" placeholder="Digite seu nome" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
