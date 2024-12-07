@@ -1,0 +1,49 @@
+/* Carrinho de compras */
+#contador-carrinho {
+  position: absolute;
+  background-color: #2db2ab;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 3px;
+  border-radius: 50%;
+  top: -3px;
+  left: 14px;
+  text-align: center;
+  line-height: 1rem;
+  min-width: 18px;
+  height: 20px;
+  display: inline-block;
+}
+
+.barra-carrinho {
+  position: relative;
+}
+
+/* Tag de desconto nos produtos em saldo */
+.product-card {
+  position: relative;
+}
+
+.tag-saldo {
+  background-color: #2db2ab;
+  display: inline-block;
+  padding: 6px 10px 6px 8px;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+.preco-desconto {
+  color: #ff0000;
+}
+
+.preco-normal {
+  text-decoration: line-through;
+}
+
+.conteudo .btn {
+  font-size: 0.9rem;
+}
