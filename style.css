@@ -68,3 +68,14 @@
   margin-bottom: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}

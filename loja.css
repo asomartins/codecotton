@@ -43,3 +43,7 @@
 .preco-normal {
   text-decoration: line-through;
 }
+
+.conteudo .btn {
+  font-size: 0.9rem;
+}
