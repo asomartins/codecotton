@@ -1,0 +1,50 @@
+.footer-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-container .selos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container img.mt-3 {
+  margin-top: 15px;
+  max-width: 100px;
+  height: auto;
+}
+
+.footer-redes ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding-top: 10px;
+}
+
+.footer-pagamento ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.footer-pagamento ul .icon-pag {
+  width: 32px;
+  height: auto;
+}
+
+.footer-pagamento ul .icon-pag-b img {
+  display: block;
+  width: 100%;
+  height: 32px;
+}
+
+.footer-clube button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#email {
+  margin-top: 15px;
+}
