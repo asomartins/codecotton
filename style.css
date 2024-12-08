@@ -142,6 +142,7 @@ h2 {
   outline: none;
   transition: 0.4s;
   font-family: roboto;
+  justify-content: space-between;
 }
 
 .active, .accordion:hover {
@@ -149,7 +150,7 @@ h2 {
 }
 
 .panel {
-  padding: 0 18px;
+  padding: 10px 10px;
   background-color: white;
   display: none;
   overflow: hidden;
