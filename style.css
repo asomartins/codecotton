@@ -10,6 +10,15 @@
   height: 28px;
 }
 
+#userNameDisplay {
+  color: #dee2e6;
+}
+
+.text-danger,
+.text-success {
+  margin-left: 16px;
+}
+
 .icons-section {
   margin-left: 15px;
 }
@@ -49,7 +58,7 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   object-fit: cover;
-  height: 200px;
+  height: 500px;
 }
 
 #box .card-body {
@@ -145,7 +154,8 @@ h2 {
   justify-content: space-between;
 }
 
-.active, .accordion:hover {
+.faq .active,
+.accordion:hover {
   background-color: #ccc;
 }
 

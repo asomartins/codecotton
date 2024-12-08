@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeCotton | Moda consciente, estilo duradouro.</title>
   <meta name="description" content="CodeCotton - Moda sustentável para toda a família. Conheça as novidades em roupas masculinas, femininas, infantis e promoções.">
-  <link rel="icon" type="image/png" sizes="16x16" href="imagens/carrinho-de-compras.png">
+  <link rel="icon" type="image/png" sizes="50x50" href="imagens/favicon-50x50.png">
   <link rel="stylesheet" href="style.css">
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,18 +55,19 @@
           </div>
         </form>
 
-        <!-- Login e carrinho -->
+        <!-- Login e Carrinho -->
         <div class="d-flex align-items-center icons-section">
+          <span id="userNameDisplay" class="me-2"></span>
           <!-- Login -->
-          <a href="login.html" class="nav-link">
+          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
             <img src="imagens/login.png" width="24" alt="Login" class="icon" />
           </a>
-
           <!-- Carrinho -->
           <a href="carrinho.html" class="nav-link">
             <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
           </a>
         </div>
+
       </div>
     </div>
   </nav>
@@ -143,7 +144,7 @@
 
           <div class="col-md-5 col-lg-3">
             <div class="card text-center bg-light">
-              <a href="saldos.html"><img src="imagens/card-sale.png" alt="Foto saldos" class="card-img-top img-fluid"></a>
+              <a href="saldos.html"><img src="imagens/card_saldos.png" alt="Foto saldos" class="card-img-top img-fluid"></a>
               <div class="card-body bg-dark text-light">
                 <h5 class="card-text">Saldos</h5>
               </div>
@@ -210,14 +211,32 @@
         </div>
         <div class="col-6 col-lg-3 mb-3 footer-clube">
           <h5>Entre para o clube sustentável :)</h5>
-          <form class="form" action="index.html">
+          <form id="emailForm">
             <div class="mb-3">
-              <label for="email">Receba promoções exclusivas e as últimas novidades da loja:</label>
+              <label for="email" class="form-label">E-mail</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="contato@email.com">
-              <button class="btn btn-light">Subscrever no clube!</button>
             </div>
+            <button class="btn btn-light subscribe" type="button" onclick="validateEmail()">Subscrever no clube!</button>
           </form>
+          <!-- Modal de Alerta -->
+          <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-light text-dark">
+                <div class=" modal-header">
+                  <h5 class="modal-title" id="alertModalLabel">Mensagem</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="modalMessage">
+                  <!-- A mensagem será exibida aqui -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="col-6 col-lg-3 mb-3 footer-pagamento">
           <h5>Pagamento</h5>
           <div class="mb-3">
@@ -234,6 +253,60 @@
   </footer>
   <!-- Fim - Footer -->
 
+  <!-- Modal Login -->
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email-user" placeholder="Digite seu e-mail" required>
+              <div class="text-danger small d-none" id="emailError">Por favor, insira um e-mail válido.</div>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome-user" placeholder="Digite seu nome" maxlength="10" required>
+              <div class="text-danger small d-none" id="nomeError">O nome não pode estar vazio e deve ter no máximo 10 caracteres.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+              <div class="text-danger small d-none" id="passwordError">A senha deve ter pelo menos 6 caracteres.</div>
+            </div>
+            <button type="button" class="btn btn-dark w-100" id="loginButton">Entrar</button>
+            <button type="button" class="btn btn-secondary w-100 mt-2 d-none" id="logoutButton">Terminar sessão</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fim - Modal Login -->
+  <!-- Modal para exibir mensagem de usuário logado -->
+  <div class="modal fade" id="loggedInModal" tabindex="-1" aria-labelledby="loggedInModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loggedInModalLabel">Sucesso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Usuário logado com sucesso!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
