@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeCotton | Contato</title>
   <meta name="description" content="CodeCotton - Moda sustentável para toda a família. Conheça as novidades em roupas masculinas, femininas, infantis e promoções.">
-  <link rel="icon" type="image/png" sizes="16x16" href="imagens/carrinho-de-compras.png">
+  <link rel="icon" type="image/png" sizes="50x50" href="imagens/favicon-50x50.png">
   <link rel="stylesheet" href="style.css">
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,7 +123,7 @@
 
       <!-- Contato -->
 
-       <div class="container contato font-2">
+      <div class="container contato font-2">
         <h2>Contato</h2>
         <div class="container p-3 fs-5 text-dark">
           <form>
@@ -143,10 +143,10 @@
               <label for="adress" class="form-label">Morada</label>
               <input type="text" class="form-control" id="adress" placeholder="Digite sua morada">
             </div>
-              <div class="mb-2">
-                  <label for="" class="form-label">Distrito</label>
-                  <input type="text" class="form-control" list="distrito" placeholder="Clique para buscar">
-                  <datalist id="distrito">
+            <div class="mb-2">
+              <label for="" class="form-label">Distrito</label>
+              <input type="text" class="form-control" list="distrito" placeholder="Clique para buscar">
+              <datalist id="distrito">
                 <option value="Aveiro"></option>
                 <option value="Beja"></option>
                 <option value="Braga"></option>
@@ -166,7 +166,7 @@
                 <option value="Vila Real"></option>
                 <option value="Viseu"></option>
               </datalist>
-            </div>      
+            </div>
             <label for="" class="form-label">Deixe aqui sua dúvida, reclamação ou sugestão</label>
             <textarea class="form-control" id="mensagem" rows="3" placeholder="Envie-nos uma mensagem"></textarea>
             <br>
@@ -176,7 +176,7 @@
 
         <!-- FAQ -->
 
-        <div class="container">
+        <div class="container faq">
           <h2>FAQ</h2>
           <button class="accordion">Qual é a política de devoluções?</button>
           <div class="panel">
@@ -185,7 +185,7 @@
 
           <button class="accordion">Como posso fazer uma devolução?</button>
           <div class="panel">
-            <p>Todas as nossas encomendas contêm um formulário de devolução que deve ser preenchido e colocado numa embalagem com os artigos a serem devolvidos. 
+            <p>Todas as nossas encomendas contêm um formulário de devolução que deve ser preenchido e colocado numa embalagem com os artigos a serem devolvidos.
 
               Pode optar pelos seguintes métodos de devolução: pontos de recolha ou recolha a domicílio. </p>
           </div>
@@ -199,14 +199,14 @@
           <div class="panel">
             <p>Uma vez efetuada a devolução, temos um prazo de 14 dias para processar o reembolso para o mesmo método de pagamento. Quando isso acontecer, receberá um e-mail de confirmação com o recibo comprovativo em anexo. Dependendo do seu banco, pode demorar até 30 dias para ver o reembolso na sua conta bancária.</p>
           </div>
-          </div>
+        </div>
 
-      <script>
+        <script>
           var acc = document.getElementsByClassName("accordion");
           var i;
-          
+
           for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
+            acc[i].addEventListener("click", function () {
               this.classList.toggle("active");
               var panel = this.nextElementSibling;
               if (panel.style.display === "block") {
@@ -216,7 +216,7 @@
               }
             });
           }
-          </script>
+        </script>
       </div>
       <!-- Fim - Contato -->
 

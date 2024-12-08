@@ -10,6 +10,15 @@
   height: 28px;
 }
 
+#userNameDisplay {
+  color: #dee2e6;
+}
+
+.text-danger,
+.text-success {
+  margin-left: 16px;
+}
+
 .icons-section {
   margin-left: 15px;
 }
@@ -96,7 +105,8 @@
   font-family: roboto;
 }
 
-.active, .accordion:hover {
+.faq .active,
+.accordion:hover {
   background-color: #ccc;
 }
 
