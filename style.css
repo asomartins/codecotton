@@ -81,7 +81,6 @@
   object-fit: cover;
 }
 
-
 .container.sobre {
   max-width: 1200px;
   margin: 0 auto;
@@ -128,4 +127,30 @@ h2 {
   .sobre-texto {
       text-align: left;
   }
+}
+/* Accordion */
+
+/* Style dos botões para abrir e fechar o painel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-family: roboto;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }
