@@ -122,14 +122,101 @@
       <!-- Fim - Breadcrumbs -->
 
       <!-- Contato -->
-      <div class="container contato font-2">
+
+       <div class="container contato font-2">
         <h2>Contato</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quidem earum inventore alias, porro sapiente eaque id voluptas harum laudantium mollitia quo commodi iste animi fugiat quaerat odio velit adipisci?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur error inventore dolorum laudantium, odio accusamus quo ea numquam libero quas nihil ipsum molestias. Adipisci sint consequatur, sit natus eaque veritatis!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam minima provident quibusdam inventore ab a atque ipsa temporibus dolorem. Deserunt quis reprehenderit ratione maiores magnam repudiandae itaque eaque facilis fugit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quidem earum inventore alias, porro sapiente eaque id voluptas harum laudantium mollitia quo commodi iste animi fugiat quaerat odio velit adipisci?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur error inventore dolorum laudantium, odio accusamus quo ea numquam libero quas nihil ipsum molestias. Adipisci sint consequatur, sit natus eaque veritatis!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam minima provident quibusdam inventore ab a atque ipsa temporibus dolorem. Deserunt quis reprehenderit ratione maiores magnam repudiandae itaque eaque facilis fugit.</p>
+        <div class="container p-3 fs-5 text-dark">
+          <form>
+            <div class="mb-2">
+              <label for="name" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="name" placeholder="Seu nome">
+            </div>
+            <div class="mb-2">
+              <label for="fone" class="form-label">Contato</label>
+              <input type="fone" class="form-control" id="fone" placeholder="+351 999999999">
+            </div>
+            <div class="mb-2">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="contato@email.com">
+            </div>
+            <div class="mb-2">
+              <label for="adress" class="form-label">Morada</label>
+              <input type="text" class="form-control" id="adress" placeholder="Digite sua morada">
+            </div>
+              <div class="mb-2">
+                  <label for="" class="form-label">Distrito</label>
+                  <input type="text" class="form-control" list="distrito" placeholder="Clique para buscar">
+                  <datalist id="distrito">
+                <option value="Aveiro"></option>
+                <option value="Beja"></option>
+                <option value="Braga"></option>
+                <option value="Bragança"></option>
+                <option value="Castelo Branco"></option>
+                <option value="Coimbra"></option>
+                <option value="Évora"></option>
+                <option value="Faro"></option>
+                <option value="Guarda"></option>
+                <option value="Leiria"></option>
+                <option value="Lisboa"></option>
+                <option value="Portalegre"></option>
+                <option value="Porto"></option>
+                <option value="Santarém"></option>
+                <option value="Setúbal"></option>
+                <option value="Viana do Castelo"></option>
+                <option value="Vila Real"></option>
+                <option value="Viseu"></option>
+              </datalist>
+            </div>      
+            <label for="" class="form-label">Deixe aqui sua dúvida, reclamação ou sugestão</label>
+            <textarea class="form-control" id="mensagem" rows="3" placeholder="Envie-nos uma mensagem"></textarea>
+            <br>
+            <button type="submit" class="btn btn-secondary">Enviar mensagem</button>
+          </form>
+        </div>
+
+        <!-- FAQ -->
+
+        <div class="container">
+          <h2>FAQ</h2>
+          <button class="accordion">Qual é a política de devoluções?</button>
+          <div class="panel">
+            <p>O prazo para devolução das compras online é de 30 dias a partir do momento em que recebe a sua encomenda.</p>
+          </div>
+
+          <button class="accordion">Como posso fazer uma devolução?</button>
+          <div class="panel">
+            <p>Todas as nossas encomendas contêm um formulário de devolução que deve ser preenchido e colocado numa embalagem com os artigos a serem devolvidos. 
+
+              Pode optar pelos seguintes métodos de devolução: pontos de recolha ou recolha a domicílio. </p>
+          </div>
+
+          <button class="accordion">Perdi a minha etiqueta de devolução, o que é que posso fazer?</button>
+          <div class="panel">
+            <p>Dentro da sua embalagem há um formulário de devolução e uma etiqueta autocolante. Caso tenha perdido, por favor, contacte o nosso apoio ao cliente.</p>
+          </div>
+
+          <button class="accordion">Fiz uma devolução. Quando vou receber o meu reembolso?</button>
+          <div class="panel">
+            <p>Uma vez efetuada a devolução, temos um prazo de 14 dias para processar o reembolso para o mesmo método de pagamento. Quando isso acontecer, receberá um e-mail de confirmação com o recibo comprovativo em anexo. Dependendo do seu banco, pode demorar até 30 dias para ver o reembolso na sua conta bancária.</p>
+          </div>
+          </div>
+
+      <script>
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+          
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.display === "block") {
+                panel.style.display = "none";
+              } else {
+                panel.style.display = "block";
+              }
+            });
+          }
+          </script>
       </div>
       <!-- Fim - Contato -->
 
