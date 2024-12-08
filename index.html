@@ -12,9 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <!-- Link Bootstrap -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
@@ -49,7 +48,7 @@
         <form class="d-flex form-busca">
           <div class="input-group">
             <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" />
-            <button type="submit" class="btn btn-outline-secondary">
+            <button id="busca" class="btn btn-outline-secondary" type="button">
               <img src="imagens/search.png" alt="Buscar" style="width: 20px; height: 20px;" />
             </button>
           </div>
@@ -66,6 +65,8 @@
           <a href="carrinho.html" class="nav-link">
             <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
           </a>
+          <span id="contador-carrinho">0</span>
+          <button class="btn btn-dark clear-cart">Limpar</button>
         </div>
 
       </div>
@@ -213,24 +214,25 @@
           <h5>Entre para o clube sustentável :)</h5>
           <form id="emailForm">
             <div class="mb-3">
-              <label for="email" class="form-label">E-mail</label>
+              <label for="email">Receba promoções exclusivas e as últimas novidades da loja:</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="contato@email.com">
             </div>
-            <button class="btn btn-light subscribe" type="button" onclick="validateEmail()">Subscrever no clube!</button>
+            <button class="btn btn-light subscribeButton" id="subscribeButton" type="button">Subscrever no clube!</button>
           </form>
+
           <!-- Modal de Alerta -->
           <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog">
               <div class="modal-content bg-light text-dark">
-                <div class=" modal-header">
-                  <h5 class="modal-title" id="alertModalLabel">Mensagem</h5>
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alertModalLabel">Atenção</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
-                <div class="modal-body" id="modalMessage">
-                  <!-- A mensagem será exibida aqui -->
+                <div class="modal-body">
+                  <p id="modalMessage"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
                 </div>
               </div>
             </div>
@@ -254,7 +256,6 @@
   <!-- Fim - Footer -->
 
   <!-- Modal Login -->
-
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
     <div class="modal-dialog">
       <div class="modal-content bg-light text-dark">
@@ -280,16 +281,16 @@
               <div class="text-danger small d-none" id="passwordError">A senha deve ter pelo menos 6 caracteres.</div>
             </div>
             <button type="button" class="btn btn-dark w-100" id="loginButton">Entrar</button>
-            <button type="button" class="btn btn-secondary w-100 mt-2 d-none" id="logoutButton">Terminar sessão</button>
+            <button type="button" class="btn btn-dark w-100 mt-2 d-none" id="logoutButton">Terminar sessão</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Fim - Modal Login -->
+
   <!-- Modal para exibir mensagem de usuário logado -->
-  <div class="modal fade" id="loggedInModal" tabindex="-1" aria-labelledby="loggedInModalLabel" aria-hidden="true">
+  <div class="modal fade" id="loggedInModal" tabindex="-1" aria-labelledby="loggedInModalLabel">
     <div class="modal-dialog">
       <div class="modal-content bg-light text-dark">
         <div class="modal-header">
@@ -300,7 +301,7 @@
           <p>Usuário logado com sucesso!</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">OK</button>
         </div>
       </div>
     </div>

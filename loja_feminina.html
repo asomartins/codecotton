@@ -56,17 +56,19 @@
           </div>
         </form>
 
-        <!-- Login e carrinho -->
+        <!-- Login e Carrinho -->
         <div class="d-flex align-items-center icons-section">
+          <span id="userNameDisplay" class="me-2"></span>
           <!-- Login -->
-          <a href="login.html" class="nav-link">
+          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
             <img src="imagens/login.png" width="24" alt="Login" class="icon" />
           </a>
-
           <!-- Carrinho -->
           <a href="carrinho.html" class="nav-link">
             <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
           </a>
+          <span id="contador-carrinho">0</span>
+          <button class="btn btn-dark clear-cart">Limpar</button>
         </div>
       </div>
     </div>
