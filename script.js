@@ -128,7 +128,7 @@ document
     const modalMessage = document.getElementById('modalMessage');
 
     if (!emailInput) {
-      modalMessage.innerText = 'O campo de e-mail não pode ser vazio.';
+      modalMessage.innerText = 'Preencha o campo de e-mail.';
       new bootstrap.Modal(document.getElementById('alertModal')).show();
     } else if (!validateEmailSub(emailInput)) {
       modalMessage.innerText = 'Por favor, insira um e-mail válido.';
@@ -142,33 +142,76 @@ document
     }
   });
 
-//Funcionalidade de carrinho
-
+/* Funcionalidade de carrinho */
 document.addEventListener('DOMContentLoaded', () => {
   const contadorCarrinho = document.getElementById('contador-carrinho');
+  const cartItemsContainer = document.getElementById('cartItems');
+  const totalItensOffCanvas = document.getElementById('total-itens');
 
-  //Limpar todos os itens do carrinho
+  // Limpa todos os itens do carrinho
   function clearCart() {
     localStorage.removeItem('cart'); // Remove o carrinho do localStorage
     updateCartCount(); // Atualiza o contador do carrinho na interface
+    renderCartItems(); // Atualiza a exibição dos itens
     alert('Todos os itens foram removidos do carrinho!');
   }
-
-  // Adiciona evento ao botão de limpar carrinho
-  document.querySelector('.clear-cart').addEventListener('click', (event) => {
-    event.preventDefault();
-    clearCart();
-  });
 
   // Atualiza a quantidade no carrinho
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     contadorCarrinho.innerText = totalItems;
+    totalItensOffCanvas.innerText = totalItems;
+
+    if (totalItems > 0) {
+      contadorCarrinho.style.display = 'block'; // Mostra o contador
+    } else {
+      contadorCarrinho.style.display = 'none'; // Oculta o contador
+    }
+  }
+
+  // Renderiza os itens no carrinho
+  function renderCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartItemsContainer.innerHTML = ''; // Limpa o conteúdo atual
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p>O carrinho está vazio.</p>';
+    } else {
+      cart.forEach((item) => {
+        const productElement = document.createElement('div');
+        productElement.classList.add(
+          'cart-item',
+          'd-flex',
+          'align-items-center',
+          'mb-3',
+        );
+        productElement.innerHTML = `
+          <img src="${item.image}" alt="${
+          item.name
+        }" class="img-thumbnail" style="width: 50px; height: 50px;">
+          <div>
+            <div>${item.name}</div>
+            <div>${item.quantity}</div>
+            <div>${(parseFloat(item.price) * item.quantity).toFixed(2)}€</div>
+          </div>
+          <button class="btn btn-trash remove-item" data-id="${item.id}">
+           <img src="imagens/lixeira.png" alt="Remover" style="width: 24px; height: 24px;">
+          </button>
+        `;
+        productElement
+          .querySelector('.remove-item')
+          .addEventListener('click', () => {
+            removeFromCart(item.id); // Chama a função de remover produto
+          });
+
+        cartItemsContainer.appendChild(productElement);
+      });
+    }
   }
 
   // Adiciona produto ao carrinho
-  function addToCart(productId, productName, productPrice) {
+  function addToCart(productId, productName, productPrice, productImage) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingItem = cart.find((item) => item.id === productId);
 
@@ -179,12 +222,15 @@ document.addEventListener('DOMContentLoaded', () => {
         id: productId,
         name: productName,
         price: productPrice,
+        image: productImage, // Armazena a URL da imagem
         quantity: 1,
       });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
+    renderCartItems();
+    updateTotalValue();
   }
 
   // Remove produto do carrinho
@@ -201,6 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
+    renderCartItems();
+    updateTotalValue();
   }
 
   // Inicializa botões
@@ -208,11 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = card.dataset.id;
     const productName = card.querySelector('.card-title').innerText;
     const productPrice = card.querySelector('.card-header').innerText;
+    const productImage = card.querySelector('.card-img-top').src; // Captura o URL da imagem
 
     card.querySelector('.add-to-cart').addEventListener('click', (event) => {
       event.preventDefault();
-      addToCart(productId, productName, productPrice);
-      //alert(`${productName} foi adicionado ao carrinho!`);
+      addToCart(productId, productName, productPrice, productImage);
+      alert(`O produto ${productName} foi adicionado ao carrinho!`);
     });
 
     card
@@ -220,10 +269,36 @@ document.addEventListener('DOMContentLoaded', () => {
       .addEventListener('click', (event) => {
         event.preventDefault();
         removeFromCart(productId);
-        //alert(`${productName} foi removido do carrinho!`);
       });
   });
 
-  // Atualiza o contador ao carregar a página
+  // Atualiza o contador e renderiza itens ao carregar a página
   updateCartCount();
+  renderCartItems();
+});
+
+// Calcula o valor total com base nos itens do carrinho
+function updateTotalValue() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalValue = cart.reduce(
+    (sum, item) => sum + parseFloat(item.price) * item.quantity,
+    0,
+  );
+
+  // Atualiza o valor total no rodapé
+  document.getElementById('valor-total').innerText = `${totalValue.toFixed(
+    2,
+  )} €`;
+}
+
+// Adiciona um evento ao botão de pagamento
+document.getElementById('pagarCompra').addEventListener('click', function () {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    alert('Seu carrinho está vazio.');
+    return;
+  }
+  // Redireciona para a página de pagamento
+  window.location.href = 'pagamento.html';
 });
