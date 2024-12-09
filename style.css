@@ -14,11 +14,6 @@
   color: #dee2e6;
 }
 
-.text-danger,
-.text-success {
-  margin-left: 16px;
-}
-
 .icons-section {
   margin-left: 15px;
 }
@@ -116,20 +111,6 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .sobre-conteudo {
-    flex-direction: column; /* Imagem e texto empilhados em telas pequenas */
-    align-items: center;
-  }
-
-  .sobre-imagem {
-    max-width: 100%;
-  }
-
-  .sobre-texto {
-    text-align: left;
-  }
-}
 /* Accordion */
 
 /* Style dos botões para abrir e fechar o painel */
@@ -157,4 +138,12 @@
   background-color: white;
   display: none;
   overflow: hidden;
+}
+
+/* Pagamento */
+
+.pagamento-conteudo {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 40px;
 }

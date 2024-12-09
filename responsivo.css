@@ -80,4 +80,17 @@
   .footer-container .selos {
     gap: 50px;
   }
+
+  .sobre-conteudo {
+    flex-direction: column; /* Imagem e texto empilhados em telas pequenas */
+    align-items: center;
+  }
+
+  .sobre-imagem {
+    max-width: 100%;
+  }
+
+  .sobre-texto {
+    text-align: left;
+  }
 }
