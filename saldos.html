@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeCotton | Saldos</title>
   <meta name="description" content="CodeCotton - Moda sustentável para toda a família. Conheça as novidades em roupas masculinas, femininas, infantis e promoções.">
-  <link rel="icon" type="image/png" sizes="16x16" href="imagens/carrinho-de-compras.png">
+  <link rel="icon" type="image/png" sizes="50x50" href="imagens/favicon-50x50.png">
   <link rel="stylesheet" href="style.css">
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <!-- Link Bootstrap -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
@@ -50,29 +49,59 @@
         <form class="d-flex form-busca">
           <div class="input-group">
             <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" />
-            <button type="submit" class="btn btn-outline-secondary">
+            <button id="busca" class="btn btn-outline-secondary" type="button">
               <img src="imagens/search.png" alt="Buscar" style="width: 20px; height: 20px;" />
             </button>
           </div>
         </form>
 
-        <!-- Login e carrinho -->
+        <!-- Login e Carrinho -->
         <div class="d-flex align-items-center icons-section">
+          <span id="userNameDisplay" class="me-2"></span>
           <!-- Login -->
-          <a href="login.html" class="nav-link">
+          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
             <img src="imagens/login.png" width="24" alt="Login" class="icon" />
           </a>
-
           <!-- Carrinho -->
-          <a href="carrinho.html" class="nav-link">
+          <a href="#" class="nav-link icon-carrinho" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
             <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
           </a>
+          <span id="contador-carrinho">0</span>
         </div>
+
       </div>
     </div>
   </nav>
   <!-- Fim Nav Bar -->
 
+  <!-- Listagem de produtos no carrinho -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-modal="true" role="dialog">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">O seu carrinho
+        <span id="total-itens" class="badge bg-secondary ms-2">0 itens</span>
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="cart-header">
+        <div class="cart-title">Produto</div>
+        <div class="cart-title">Quantidade</div>
+        <div class="cart-title">Valor</div>
+      </div>
+      <div id="cartItems" class="mt-3">
+      </div>
+      <div class="offcanvas-footer p-3 border-top">
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-bold">Total:</span>
+          <span id="valor-total" class="fw-bold">0.00 €</span>
+        </div>
+        <button id="pagarCompra" class="btn btn-dark w-100 mt-3">Efetuar Pagamento</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Fim - Listagem de produtos no carrinho -->
   <main>
     <!-- Container conteúdo -->
     <div class="conteudo">
@@ -174,7 +203,7 @@
               <div class="card-body">
                 <h5 class="card-title"> T-Shirt Estampada Masculina </h5>
                 <p class="card-text">
-                  T-shirt  relax fit de gola redonda e manga curta. Composição 100% Algodão. Tamanho S
+                  T-shirt relax fit de gola redonda e manga curta. Composição 100% Algodão. Tamanho S
                 </p>
               </div>
               <div class="card-footer">
@@ -192,7 +221,7 @@
               <img src="imagens/Produtos/camiseta_masculina_cava.jpg" class="card-img-top" alt="T-shirt Feminina Preta">
               <div class="card-header"> 12 €</div>
               <div class="card-body">
-                <h5 class="card-title"> T-Shirt de Alça </h5>
+                <h5 class="card-title"> T-Shirt de Alça Masculina</h5>
                 <p class="card-text">
                   T-shirt de decote redondo amplo e manga cava. Composição 100% Lã. Tamanho M
                 </p>
@@ -396,7 +425,7 @@
             </div>
           </nav>
         </div>
-        <div class="col-6 col-lg-2 mb-4 footer-redes">
+        <div class="col-6 col-lg-2 mb-3 footer-redes">
           <h5>Comunidade</h5>
           <div class="mb-3">
             <ul class="list-unstyled">
@@ -414,14 +443,33 @@
         </div>
         <div class="col-6 col-lg-3 mb-3 footer-clube">
           <h5>Entre para o clube sustentável :)</h5>
-          <form class="form" action="index.html">
+          <form id="emailForm">
             <div class="mb-3">
               <label for="email">Receba promoções exclusivas e as últimas novidades da loja:</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="contato@email.com">
-              <button class="btn btn-light">Subscrever no clube!</button>
             </div>
+            <button class="btn btn-light subscribeButton" id="subscribeButton" type="button">Subscrever no clube!</button>
           </form>
+
+          <!-- Modal de Alerta -->
+          <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel">
+            <div class="modal-dialog">
+              <div class="modal-content bg-light text-dark">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alertModalLabel">Atenção</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="modalMessage"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="col-6 col-lg-3 mb-3 footer-pagamento">
           <h5>Pagamento</h5>
           <div class="mb-3">
@@ -437,6 +485,59 @@
     </div>
   </footer>
   <!-- Fim - Footer -->
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email-user" placeholder="Digite seu e-mail" required>
+              <div class="text-danger small d-none" id="emailError">Por favor, insira um e-mail válido.</div>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome-user" placeholder="Digite seu nome" maxlength="10" required>
+              <div class="text-danger small d-none" id="nomeError">O nome não pode estar vazio e deve ter no máximo 10 caracteres.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+              <div class="text-danger small d-none" id="passwordError">A senha deve ter pelo menos 6 caracteres.</div>
+            </div>
+            <button type="button" class="btn btn-dark w-100" id="loginButton">Entrar</button>
+            <button type="button" class="btn btn-dark w-100 mt-2 d-none" id="logoutButton">Terminar sessão</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim - Modal Login -->
+
+  <!-- Modal para exibir mensagem de usuário logado -->
+  <div class="modal fade" id="loggedInModal" tabindex="-1" aria-labelledby="loggedInModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loggedInModalLabel">Sucesso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Usuário logado com sucesso!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 
 </body>
 
