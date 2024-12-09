@@ -50,28 +50,59 @@
         <form class="d-flex form-busca">
           <div class="input-group">
             <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" />
-            <button type="submit" class="btn btn-outline-secondary">
+            <button id="busca" class="btn btn-outline-secondary" type="button">
               <img src="imagens/search.png" alt="Buscar" style="width: 20px; height: 20px;" />
             </button>
           </div>
         </form>
 
-        <!-- Login e carrinho -->
+        <!-- Login e Carrinho -->
         <div class="d-flex align-items-center icons-section">
+          <span id="userNameDisplay" class="me-2"></span>
           <!-- Login -->
-          <a href="login.html" class="nav-link">
+          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
             <img src="imagens/login.png" width="24" alt="Login" class="icon" />
           </a>
-
           <!-- Carrinho -->
-          <a href="carrinho.html" class="nav-link">
+          <a href="#" class="nav-link icon-carrinho" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
             <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
           </a>
+          <span id="contador-carrinho">0</span>
         </div>
+
       </div>
     </div>
   </nav>
   <!-- Fim Nav Bar -->
+
+  <!-- Listagem de produtos no carrinho -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-modal="true" role="dialog">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">O seu carrinho
+        <span id="total-itens" class="badge bg-secondary ms-2">0 itens</span>
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="cart-header">
+        <div class="cart-title">Produto</div>
+        <div class="cart-title">Quantidade</div>
+        <div class="cart-title">Valor</div>
+      </div>
+      <div id="cartItems" class="mt-3">
+      </div>
+      <div class="offcanvas-footer p-3 border-top">
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-bold">Total:</span>
+          <span id="valor-total" class="fw-bold">0.00 €</span>
+        </div>
+        <button id="pagarCompra" class="btn btn-dark w-100 mt-3">Efetuar Pagamento</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Fim - Listagem de produtos no carrinho -->
 
   <main>
     <!-- Container Conteúdo -->
@@ -122,170 +153,161 @@
       </div>
       <!-- Fim - Breadcrumbs -->
 
-   <!-- Sobre -->
-<div class="container sobre font-2">
-  <h2>Sobre a CodeCotton</h2>
-  <div class="row">
-    <!-- Coluna da Imagem -->
-    <div class="col-md-6">
-      <img src="imagens/natureza.jpg" class="sobre-imagem img-fluid" alt="natureza">
-    </div>
-    <!-- Coluna do Texto -->
-    <div class="col-md-6 sobre-texto">
-      <p>Na CodeCotton, acreditamos que a moda não precisa prejudicar o planeta. Combinamos tecnologia de ponta e práticas ecológicas para criar roupas sustentáveis e elegantes. Cada peça é produzida com materiais recicláveis e processos de baixo impacto ambiental, garantindo conforto e estilo sem comprometer o futuro.</p>
-      <p>Além disso, a cada compra, parte do valor é destinado a projetos de reflorestamento e plantio de árvores, ajudando a restaurar ecossistemas e a combater a desflorestação.</p>
-      <p>Junte-se a nós nesta jornada de moda consciente e impacto positivo! Ao escolher CodeCotton, você não só adota um estilo de vida mais sustentável, mas também contribui para um futuro mais verde e justo.</p>
-      <p>Nosso compromisso vai além da criação de roupas. Estamos empenhados em criar um movimento de mudança no setor da moda, onde a inovação e a responsabilidade ambiental caminham juntas. Através de práticas transparentes, buscamos transformar a indústria em um lugar mais consciente e eficiente para todos.</p>
-    </div> <!-- Fecho da div do texto -->
-  </div>
-</div>
-<div class="container my-5">
-  <div class="row text-center">
-    <!-- Caixa Texto 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light" style="min-height: 300px;">
-        <h3 class="mb-3">Inovação Sustentável</h3>
-        <p class="mb-3">Na CodeCotton, utilizamos tecnologia de ponta para criar roupas que respeitam o planeta, reduzindo o desperdício e promovendo a reutilização de materiais.</p>
-        <i class="bi bi-recycle" style="font-size: 2.5rem; color: #28a745;"></i>
+      <!-- Sobre -->
+      <div class="container sobre font-2">
+        <h2>Sobre a CodeCotton</h2>
+        <div class="row">
+          <!-- Coluna da Imagem -->
+          <div class="col-md-6">
+            <img src="imagens/natureza.jpg" class="sobre-imagem img-fluid" alt="natureza">
+          </div>
+          <!-- Coluna do Texto -->
+          <div class="col-md-6 sobre-texto">
+            <p>Na CodeCotton, acreditamos que a moda não precisa prejudicar o planeta. Combinamos tecnologia de ponta e práticas ecológicas para criar roupas sustentáveis e elegantes. Cada peça é produzida com materiais recicláveis e processos de baixo impacto ambiental, garantindo conforto e estilo sem comprometer o futuro.</p>
+            <p>Além disso, a cada compra, parte do valor é destinado a projetos de reflorestamento e plantio de árvores, ajudando a restaurar ecossistemas e a combater a desflorestação.</p>
+            <p>Junte-se a nós nesta jornada de moda consciente e impacto positivo! Ao escolher CodeCotton, você não só adota um estilo de vida mais sustentável, mas também contribui para um futuro mais verde e justo.</p>
+            <p>Nosso compromisso vai além da criação de roupas. Estamos empenhados em criar um movimento de mudança no setor da moda, onde a inovação e a responsabilidade ambiental caminham juntas. Através de práticas transparentes, buscamos transformar a indústria em um lugar mais consciente e eficiente para todos.</p>
+          </div> <!-- Fecho da div do texto -->
+        </div>
       </div>
-    </div>
-    <!-- Caixa Texto 2 -->
-    <div class="col-md-4 mb-4">
-      <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light" style="min-height: 300px;">
-        <h3 class="mb-3">Tecidos Inteligentes</h3>
-        <p class="mb-3">Nossas peças são feitas com materiais incríveis como algodão sustentável, viscose e lyocell, 100% rastreáveis, garantindo qualidade e transparência em todo o processo produtivo.</p>
-        <i class="bi bi-laptop" style="font-size: 2.5rem; color: #28a745;"></i>
+      <div class="container my-5">
+        <div class="row text-center">
+          <!-- Caixa Texto 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light" style="min-height: 300px;">
+              <h3 class="mb-3">Inovação Sustentável</h3>
+              <p class="mb-3">Na CodeCotton, utilizamos tecnologia de ponta para criar roupas que respeitam o planeta, reduzindo o desperdício e promovendo a reutilização de materiais.</p>
+              <i class="bi bi-recycle" style="font-size: 2.5rem; color: #28a745;"></i>
+            </div>
+          </div>
+          <!-- Caixa Texto 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light" style="min-height: 300px;">
+              <h3 class="mb-3">Tecidos Inteligentes</h3>
+              <p class="mb-3">Nossas peças são feitas com materiais incríveis como algodão sustentável, viscose e lyocell, 100% rastreáveis, garantindo qualidade e transparência em todo o processo produtivo.</p>
+              <i class="bi bi-laptop" style="font-size: 2.5rem; color: #28a745;"></i>
+            </div>
+          </div>
+          <!-- Caixa Texto 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light" style="min-height: 300px;">
+              <h3 class="mb-3">Moda Consciente</h3>
+              <p class="mb-3">A CodeCotton acredita que é possível criar peças elegantes e ecológicas, respeitando o meio ambiente e priorizando o consumo consciente. Cada peça reflete nossa visão de sustentabilidade. </p>
+              <i class="bi bi-lightbulb-fill" style="font-size: 2.5rem; color: #28a745;"></i>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- Caixa Texto 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light" style="min-height: 300px;">
-        <h3 class="mb-3">Moda Consciente</h3>
-        <p class="mb-3">A CodeCotton acredita que é possível criar peças elegantes e ecológicas, respeitando o meio ambiente e priorizando o consumo consciente. Cada peça reflete nossa visão de sustentabilidade. </p>
-        <i class="bi bi-lightbulb-fill" style="font-size: 2.5rem; color: #28a745;"></i>
-      </div>
-    </div>
-  </div>
-</div>
- <!-- Seção 2: Nossa Contribuição para o Reflorestamento -->
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2 class="mb-4">A Nossa Contribuição para o Reflorestamento</h2>
-      <p>Na CodeCotton, acreditamos que a moda sustentável vai além do design das nossas roupas. Ao adquirir nossos produtos, você não está apenas investindo em peças feitas com tecidos eco-friendly, mas também está ajudando a restaurar o nosso planeta. Parte de cada compra é destinada a projetos de reflorestamento e ao plantio de árvores em regiões que precisam de recuperação ambiental.</p>
-      <p>Com a sua ajuda, podemos combater a desflorestação, promover a biodiversidade e melhorar a qualidade do ar. Cada compra representa uma árvore plantada, o que significa que a cada peça CodeCotton adquirida, você contribui diretamente para um futuro mais verde e sustentável.</p>
-      
-      <!-- Ajuste da imagem -->
-      <img src="imagens/plantio.jpg" alt="Reflorestamento e Plantio" class="img-fluid rounded shadow-sm" style="width: 100%; height: auto; max-height: 400px; object-fit: cover;">
-    </div>
-  </div>
-</div>
+      <!-- Seção 2: Nossa Contribuição para o Reflorestamento -->
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="mb-4">A Nossa Contribuição para o Reflorestamento</h2>
+            <p>Na CodeCotton, acreditamos que a moda sustentável vai além do design das nossas roupas. Ao adquirir nossos produtos, você não está apenas investindo em peças feitas com tecidos eco-friendly, mas também está ajudando a restaurar o nosso planeta. Parte de cada compra é destinada a projetos de reflorestamento e ao plantio de árvores em regiões que precisam de recuperação ambiental.</p>
+            <p>Com a sua ajuda, podemos combater a desflorestação, promover a biodiversidade e melhorar a qualidade do ar. Cada compra representa uma árvore plantada, o que significa que a cada peça CodeCotton adquirida, você contribui diretamente para um futuro mais verde e sustentável.</p>
 
-<!-- Seção 3: Nossos Valores -->
-<div class="container my-5">
-  <div class="row justify-content-center">
-    <!-- Primeira Caixa: Reflorestamento Global -->
-    <div class="col-md-4 mb-4">
-      <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light text-center" style="min-height: 350px;">
-        <!-- Reflorestamento Global -->
-        <i class="bi bi-tree" style="font-size: 3rem; color: #28a745;"></i>
-        <h3 class="mt-3">Reflorestamento Global</h3>
-        <p>Estamos comprometidos com o reflorestamento global, apoiando projetos que restauram florestas tropicais e outras áreas desmatadas, contribuindo para a recuperação de ecossistemas e a mitigação das mudanças climáticas.</p>
+            <!-- Ajuste da imagem -->
+            <img src="imagens/plantio.jpg" alt="Reflorestamento e Plantio" class="img-fluid rounded shadow-sm" style="width: 100%; height: auto; max-height: 400px; object-fit: cover;">
+          </div>
+        </div>
       </div>
-    </div>
-    
-    <!-- Segunda Caixa: Proteção da Biodiversidade -->
-    <div class="col-md-4 mb-4">
-      <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light text-center" style="min-height: 350px;">
-        <i class="bi bi-bug" style="font-size: 3rem; color: #28a745;"></i>
-        <h3 class="mt-3">Proteção da Biodiversidade</h3>
-        <p>Com nossos projetos de plantio de árvores, contribuímos para a preservação da biodiversidade, garantindo habitats para a fauna e flora locais.</p>
-      </div>
-    </div>
-    
-    <!-- Terceira Caixa: Educação Ambiental -->
-    <div class="col-md-4 mb-4">
-      <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light text-center" style="min-height: 350px;">
-        <i class="bi bi-book" style="font-size: 3rem; color: #28a745;"></i>
-        <h3 class="mt-3">Educação Ambiental</h3>
-        <p>Promovemos a educação ambiental, ensinando a importância da preservação dos recursos naturais e incentivando ações conscientes no dia a dia para um futuro mais sustentável.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Seção 4: Equipe CodeCotton -->
-<div class="container my-5">
-  <h2 class="text-center mb-4">Conheça a Nossa Equipa</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-4 mb-4">
-      <div class="text-center">
-        <!-- Foto ajustada ao círculo -->
-        <img src="imagens/amanda.jpg" 
-        class="img-fluid rounded-circle mb-3" 
-        alt="Pessoa 1" 
-        style="width: 250px; height: 250px; object-fit: cover;">
-        <h4>Amanda</h4>
-        <p>Ceo e Fundador</p>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="text-center">
-        <!-- Foto ajustada ao círculo -->
-        <img src="imagens/claudia.png" 
-        class="img-fluid rounded-circle mb-3" 
-        alt="Pessoa 2" 
-        style="width: 250px; height: 250px; object-fit: cover;">
-        <h4>Cláudia</h4>
-        <p>Ceo</p>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="text-center">
-        <!-- Foto ajustada ao círculo -->
-        <img src="imagens/joao.jpg" 
-        class="img-fluid rounded-circle mb-3" 
-        alt="Pessoa 3" 
-        style="width: 250px; height: 250px; object-fit: cover;">
-        <h4>João</h4>
-        <p>Ceo</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Seção 5: Testemunhos de Clientes -->
-<div class="container my-5">
-  <h2 class="text-center mb-4">O que nossos clientes dizem</h2>
-  <div class="row">
-    <div class="col-md-6 mb-4">
-      <div class="p-4 border rounded shadow-sm bg-light">
-        <p>"A CodeCotton não só me oferece roupas incríveis, mas também faz-me sentir bem por apoiar uma marca que se preocupa com o meio ambiente."</p>
-        <h5>- Sofia Almeida</h5>
-        <p>Cliente satisfeita</p>
-      </div>
-    </div>
-    <div class="col-md-6 mb-4">
-      <div class="p-4 border rounded shadow-sm bg-light">
-        <p>"Adoro o design e a qualidade das roupas da CodeCotton. É ótimo saber que estou a contribuir para um futuro mais sustentável."</p>
-        <h5>- Carlos Ferreira</h5>
-        <p>Cliente satisfeito</p>
-      </div>
-    </div>
-  </div>
-</div>
+      <!-- Seção 3: Nossos Valores -->
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <!-- Primeira Caixa: Reflorestamento Global -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light text-center" style="min-height: 350px;">
+              <!-- Reflorestamento Global -->
+              <i class="bi bi-tree" style="font-size: 3rem; color: #28a745;"></i>
+              <h3 class="mt-3">Reflorestamento Global</h3>
+              <p>Estamos comprometidos com o reflorestamento global, apoiando projetos que restauram florestas tropicais e outras áreas desmatadas, contribuindo para a recuperação de ecossistemas e a mitigação das mudanças climáticas.</p>
+            </div>
+          </div>
 
-<!-- Seção 6: Nossa Visão Futura -->
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2 class="mb-4">A Nossa Visão para o Futuro</h2>
-      <p>Na CodeCotton, o nosso objetivo é crescer de maneira responsável, expandindo nosso alcance enquanto continuamos a oferecer moda sustentável e inovadora. Vamos liderar o caminho para um futuro onde a indústria da moda seja sinônimo de responsabilidade ambiental e social.</p>
-      
-      <!-- Ajuste de imagem com largura 100% e altura controlada -->
-      <img src="imagens/algodao.jpg" alt="Futuro Verde" class="img-fluid rounded shadow-sm" style="width: 100%; max-height: 300px; object-fit: cover;">
-    </div>
-  </div>
-</div>
+          <!-- Segunda Caixa: Proteção da Biodiversidade -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light text-center" style="min-height: 350px;">
+              <i class="bi bi-bug" style="font-size: 3rem; color: #28a745;"></i>
+              <h3 class="mt-3">Proteção da Biodiversidade</h3>
+              <p>Com nossos projetos de plantio de árvores, contribuímos para a preservação da biodiversidade, garantindo habitats para a fauna e flora locais.</p>
+            </div>
+          </div>
+
+          <!-- Terceira Caixa: Educação Ambiental -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center p-4 border rounded shadow-sm bg-light text-center" style="min-height: 350px;">
+              <i class="bi bi-book" style="font-size: 3rem; color: #28a745;"></i>
+              <h3 class="mt-3">Educação Ambiental</h3>
+              <p>Promovemos a educação ambiental, ensinando a importância da preservação dos recursos naturais e incentivando ações conscientes no dia a dia para um futuro mais sustentável.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Seção 4: Equipe CodeCotton -->
+      <div class="container my-5">
+        <h2 class="text-center mb-4">Conheça a Nossa Equipa</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <!-- Foto ajustada ao círculo -->
+              <img src="imagens/amanda.jpg" class="img-fluid rounded-circle mb-3" alt="Pessoa 1" style="width: 250px; height: 250px; object-fit: cover;">
+              <h4>Amanda</h4>
+              <p>Ceo</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <!-- Foto ajustada ao círculo -->
+              <img src="imagens/claudia.png" class="img-fluid rounded-circle mb-3" alt="Pessoa 2" style="width: 250px; height: 250px; object-fit: cover;">
+              <h4>Cláudia</h4>
+              <p>Ceo</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <!-- Foto ajustada ao círculo -->
+              <img src="imagens/joao.jpg" class="img-fluid rounded-circle mb-3" alt="Pessoa 3" style="width: 250px; height: 250px; object-fit: cover;">
+              <h4>João</h4>
+              <p>Ceo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Testemunhos de Clientes -->
+      <div class="container my-5">
+        <h2 class="text-center mb-4">O que nossos clientes dizem</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="p-4 border rounded shadow-sm bg-light">
+              <p>"A CodeCotton não só me oferece roupas incríveis, mas também faz-me sentir bem por apoiar uma marca que se preocupa com o meio ambiente."</p>
+              <h5>- Sofia Almeida</h5>
+              <p>Cliente satisfeita</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="p-4 border rounded shadow-sm bg-light">
+              <p>"Adoro o design e a qualidade das roupas da CodeCotton. É ótimo saber que estou a contribuir para um futuro mais sustentável."</p>
+              <h5>- Carlos Ferreira</h5>
+              <p>Cliente satisfeito</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 6: Nossa Visão Futura -->
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="mb-4">A Nossa Visão para o Futuro</h2>
+            <p>Na CodeCotton, o nosso objetivo é crescer de maneira responsável, expandindo nosso alcance enquanto continuamos a oferecer moda sustentável e inovadora. Vamos liderar o caminho para um futuro onde a indústria da moda seja sinônimo de responsabilidade ambiental e social.</p>
+
+            <!-- Ajuste de imagem com largura 100% e altura controlada -->
+            <img src="imagens/algodao.jpg" alt="Futuro Verde" class="img-fluid rounded shadow-sm" style="width: 100%; max-height: 300px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
       <!-- Fim - Sobre -->
 
     </div>
@@ -332,14 +354,33 @@
         </div>
         <div class="col-6 col-lg-3 mb-3 footer-clube">
           <h5>Entre para o clube sustentável :)</h5>
-          <form class="form" action="index.html">
+          <form id="emailForm">
             <div class="mb-3">
               <label for="email">Receba promoções exclusivas e as últimas novidades da loja:</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="contato@email.com">
-              <button class="btn btn-light">Subscrever no clube!</button>
             </div>
+            <button class="btn btn-light subscribeButton" id="subscribeButton" type="button">Subscrever no clube!</button>
           </form>
+
+          <!-- Modal de Alerta -->
+          <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel">
+            <div class="modal-dialog">
+              <div class="modal-content bg-light text-dark">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alertModalLabel">Atenção</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="modalMessage"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="col-6 col-lg-3 mb-3 footer-pagamento">
           <h5>Pagamento</h5>
           <div class="mb-3">
@@ -355,6 +396,59 @@
     </div>
   </footer>
   <!-- Fim - Footer -->
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email-user" placeholder="Digite seu e-mail" required>
+              <div class="text-danger small d-none" id="emailError">Por favor, insira um e-mail válido.</div>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome-user" placeholder="Digite seu nome" maxlength="10" required>
+              <div class="text-danger small d-none" id="nomeError">O nome não pode estar vazio e deve ter no máximo 10 caracteres.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+              <div class="text-danger small d-none" id="passwordError">A senha deve ter pelo menos 6 caracteres.</div>
+            </div>
+            <button type="button" class="btn btn-dark w-100" id="loginButton">Entrar</button>
+            <button type="button" class="btn btn-dark w-100 mt-2 d-none" id="logoutButton">Terminar sessão</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim - Modal Login -->
+
+  <!-- Modal para exibir mensagem de usuário logado -->
+  <div class="modal fade" id="loggedInModal" tabindex="-1" aria-labelledby="loggedInModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loggedInModalLabel">Sucesso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Usuário logado com sucesso!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 
 </body>
 
