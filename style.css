@@ -5,9 +5,18 @@
 
 /* Ícones de login e carrinho */
 .icons-section .icon {
-  margin-left: 10px;
+  margin-left: 15px;
   width: 28px;
   height: 28px;
+}
+
+#userNameDisplay {
+  color: #dee2e6;
+}
+
+.text-danger,
+.text-success {
+  margin-left: 16px;
 }
 
 .icons-section {
@@ -48,7 +57,7 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   object-fit: cover;
-  height: 200px;
+  height: 500px;
 }
 
 #box .card-body {
@@ -80,6 +89,47 @@
   object-fit: cover;
 }
 
+.container.sobre {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sobre-conteudo {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Espaço entre imagem e texto */
+  flex-wrap: wrap; /* Ajusta para dispositivos menores */
+}
+
+.sobre-imagem {
+  flex: 1; /* Define o tamanho da imagem */
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-texto {
+  flex: 2; /* Define o tamanho do texto */
+  text-align: justify;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .sobre-conteudo {
+    flex-direction: column; /* Imagem e texto empilhados em telas pequenas */
+    align-items: center;
+  }
+
+  .sobre-imagem {
+    max-width: 100%;
+  }
+
+  .sobre-texto {
+    text-align: left;
+  }
+}
 /* Accordion */
 
 /* Style dos botões para abrir e fechar o painel */
@@ -97,7 +147,8 @@
   justify-content: space-between;
 }
 
-.active, .accordion:hover {
+.faq .active,
+.accordion:hover {
   background-color: #ccc;
 }
 
