@@ -14,11 +14,6 @@
   color: #dee2e6;
 }
 
-.text-danger,
-.text-success {
-  margin-left: 16px;
-}
-
 .icons-section {
   margin-left: 15px;
 }
@@ -31,6 +26,16 @@
 .breadcrumb {
   padding: 15px !important;
   border-bottom: 1px solid #e3e3e3;
+}
+
+.carousel {
+  max-width: 100%; /* Garante que o carrossel não exceda a largura da tela */
+  overflow: hidden; /* Remove qualquer conteúdo que "vaze" para fora do contêiner */
+}
+
+.carousel-item img {
+  width: 100%; /* Garante que a imagem preencha o contêiner do carrossel */
+  height: auto; /* Mantém a proporção da imagem */
 }
 
 .conteudo {
@@ -116,20 +121,6 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .sobre-conteudo {
-    flex-direction: column; /* Imagem e texto empilhados em telas pequenas */
-    align-items: center;
-  }
-
-  .sobre-imagem {
-    max-width: 100%;
-  }
-
-  .sobre-texto {
-    text-align: left;
-  }
-}
 /* Accordion */
 
 /* Style dos botões para abrir e fechar o painel */
@@ -157,4 +148,58 @@
   background-color: white;
   display: none;
   overflow: hidden;
+}
+
+/* Pagamento */
+
+.pagamento-conteudo {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 40px;
+}
+
+.formulario-pagamento .icon-pag,
+.formulario-pagamento .icon-pag-b {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.formulario-pagamento ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario-pagamento .icon-pag img,
+.formulario-pagamento .icon-pag-b img {
+  width: 50px;
+  height: auto;
+}
+
+#infoMultibanco {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px; /* Reduz o preenchimento interno */
+  max-width: 270px; /* Define um tamanho máximo para a largura */
+}
+
+#infoMultibanco img {
+  margin-right: 10px;
+  width: 50px; /* Ajusta o tamanho do ícone */
+  height: 50px; /* Garante proporções consistentes */
+}
+
+#infoMultibanco .d-flex {
+  align-items: center; /* Alinha o texto verticalmente ao ícone */
+}
+
+#infoMultibanco p {
+  margin: 5px 0; /* Reduz o espaço entre os parágrafos */
 }

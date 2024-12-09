@@ -29,14 +29,13 @@
   padding-top: 10px;
 }
 
-.footer-pagamento ul .icon-pag {
+.footer-pagamento ul .icon-pag img {
   width: 32px;
-  height: auto;
+  height: 32px;
 }
 
 .footer-pagamento ul .icon-pag-b img {
-  display: block;
-  width: 100%;
+  width: 58px;
   height: 32px;
 }
 

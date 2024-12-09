@@ -7,7 +7,7 @@
   padding: 3px;
   border-radius: 50%;
   top: 0;
-  left: 80px;
+  left: 33px;
   text-align: center;
   line-height: 1rem;
   min-width: 16px;
@@ -15,7 +15,8 @@
   display: none;
 }
 
-.icons-section {
+.icons-section,
+.barra-icon-carrinho {
   position: relative;
 }
 

@@ -62,45 +62,18 @@
             <img src="imagens/login.png" width="24" alt="Login" class="icon" />
           </a>
           <!-- Carrinho -->
-          <a href="#" class="nav-link icon-carrinho" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-            <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
-          </a>
-          <span id="contador-carrinho">0</span>
+          <div class="barra-icon-carrinho">
+            <a href="#" class="nav-link icon-carrinho" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+              <img src="imagens/carrinho-de-compras.png" width="24" alt="Carrinho" class="icon" />
+            </a>
+            <span id="contador-carrinho">0</span>
+          </div>
         </div>
 
       </div>
     </div>
   </nav>
   <!-- Fim Nav Bar -->
-
-  <!-- Listagem de produtos no carrinho -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-modal="true" role="dialog">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">O seu carrinho
-        <span id="total-itens" class="badge bg-secondary ms-2">0 itens</span>
-      </h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="cart-header">
-        <div class="cart-title">Produto</div>
-        <div class="cart-title">Quantidade</div>
-        <div class="cart-title">Valor</div>
-      </div>
-      <div id="cartItems" class="mt-3">
-      </div>
-      <div class="offcanvas-footer p-3 border-top">
-        <div class="d-flex justify-content-between align-items-center">
-          <span class="fw-bold">Total:</span>
-          <span id="valor-total" class="fw-bold">0.00 €</span>
-        </div>
-        <button id="pagarCompra" class="btn btn-dark w-100 mt-3">Efetuar Pagamento</button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Fim - Listagem de produtos no carrinho -->
 
   <main>
     <!-- Container conteúdo -->
@@ -150,15 +123,151 @@
         </nav>
       </div>
       <!-- Fim - Breadcrumbs -->
-    </div>
 
-    <!-- Pagamento -->
-    <div class="container pagamento font-2">
-      <h2>Pagamento</h2>
-      <div class="pagamento-conteudo">
+      <!-- Pagamento -->
+      <div class="container pagamento">
+        <h2 class="font-2">Pagamento</h2>
+        <div class="pagamento-conteudo font-2">
+
+          <!-- Listagem de Produtos -->
+          <div class="lista-produtos">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title" id="offcanvasRightLabel">Produtos
+                <span id="total-itens" class="badge bg-secondary ms-2">0 itens</span>
+              </h3>
+            </div>
+            <div class="offcanvas-body">
+              <div class="cart-header">
+                <div class="cart-title">Produto</div>
+                <div class="cart-title">Quantidade</div>
+                <div class="cart-title">Valor</div>
+              </div>
+              <div id="cartItems" class="mt-3">
+              </div>
+              <div class="offcanvas-footer p-3 border-top">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">Total:</span>
+                  <span id="valor-total" class="fw-bold">0.00 €</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fim - Listagem de Produtos -->
+
+          <!-- Formulário de Pagamento -->
+          <div class="formulario-pagamento">
+            <h3 class="color-2 mb-4">Contato</h3>
+            <section class="envio-formulario" aria-label="Formulário">
+              <form class="form" action="pagamento.html">
+                <div class="mb-3">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="input-email" name="email" placeholder="contato@email.com">
+                </div>
+                <h3 class="color-2 mt-5 mb-4">Entrega</h3>
+                <div class="mb-3 d-flex flex-wrap gap-3">
+                  <div class="flex-grow-1">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome">
+                  </div>
+                  <div class="flex-grow-1">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" id="input-sobrenome" name="Sobrenome">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="telefone">Telemóvel</label>
+                  <input type="text" class="form-control" id="telemovel" name="telemovel" placeholder="+351999999999">
+                </div>
+                <div class="mb-3 d-flex flex-wrap gap-3">
+                  <div class="flex-grow-1">
+                    <label for="morada">Morada</label>
+                    <input type="text" class="form-control" id="input-morada" name="morada">
+                  </div>
+                  <div class="flex-grow-1">
+                    <label for="codigo-postal">Complemento</label>
+                    <input type="text" class="form-control" id="input-complemento" name="complemento" placeholder="Num/Apto/Porta">
+                  </div>
+                </div>
+                <div class="mb-3 d-flex flex-wrap gap-3">
+                  <div class="flex-grow-1">
+                    <label for="Região">Região</label>
+                    <input type="text" class="form-control" id="input-regiao" name="regiao">
+                  </div>
+                  <div class="flex-grow-1">
+                    <label for="codigo-postal">Código Postal</label>
+                    <input type="text" class="form-control" id="input-codigo-postal" name="codigo-postal" placeholder="4100-450">
+                  </div>
+                </div>
+                <div class="mb-3 d-flex flex-wrap gap-3">
+                  <div class="flex-grow-1">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="input-cidade" name="cidade" placeholder="Porto">
+                  </div>
+                  <div class="flex-grow-1">
+                    <label for="pais">País</label>
+                    <input type="text" class="form-control" id="codigo-postal" name="codigo-postal" placeholder="Portugal">
+                  </div>
+                </div>
+                <h3 class="color-2 mt-5 mb-4">Pagamento</h3>
+                <div class="mt-4 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment-method" id="radioCartao" checked>
+                    <label class="form-check-label" for="radioCartao">
+                      Cartão de crédito
+                      <ul class="list-unstyled">
+                        <li class="icon-pag"><img src="imagens/visa.svg" alt="Visa"></li>
+                        <li class="icon-pag"><img src="imagens/logo_master.svg" alt="Mastercard"></li>
+                      </ul>
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="numero-cartao" name="numero-cartao" placeholder="Número do cartão">
+                </div>
+                <div class="mb-3 d-flex flex-wrap gap-3">
+                  <div class="flex-grow-1">
+                    <input type="text" class="form-control" id="vencimento" name="vencimento" placeholder="Data de vencimento (MM/AA)">
+                  </div>
+                  <div class="flex-grow-1">
+                    <input type="text" class="form-control" id="codigo-seguranca" name="codigo-seguranca" placeholder="Código de segurança">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="nome-cartao" name="nome-cartao" placeholder="Nome no cartão">
+                </div>
+                <div class="mb-3 mt-5">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment-method" id="multibanco">
+                    <label class="form-check-label" for="multibanco">Multibanco</label>
+                  </div>
+                </div>
+                <div class="mt-3 p-3" id="infoMultibanco">
+                  <div class="d-flex align-items-center mb-2">
+                    <img src="imagens/multibanco_icon_50x50.png" alt="Ícone Multibanco">
+                  </div>
+                  <span class="fw-bold">Pagamento por Multibanco</span>
+                  <p class="mb-1">Entidade: <strong>11604</strong></p>
+                  <p class="mb-0">Referência: <strong>999 123 490</strong></p>
+                </div>
+                <div class="mb-3 mt-5">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment-method" id="mbway">
+                    <label class="form-check-label" for="mbway">Mbway</label>
+                  </div>
+                </div>
+
+                <button id="finalizarCompra" class="btn btn-dark w-100 mt-3">Finalizar Compra</button>
+          </div>
+          </form>
+          </section>
+        </div>
+        <!-- Fim - Formulário de Pagamento -->
+
       </div>
+      <!-- Fim - Pagamento Conteudo -->
+
     </div>
-    <!-- Fim - Pagamento -->
+    <!-- Fim - Container pagamento -->
 
   </main>
 
