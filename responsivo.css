@@ -93,4 +93,8 @@
   .sobre-texto {
     text-align: left;
   }
+
+  .pagamento-conteudo {
+    grid-template-columns: 1fr !important;
+  }
 }
